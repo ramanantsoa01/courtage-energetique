@@ -1,0 +1,28 @@
+.form-control {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.75rem;
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    outline: 0;
+}
+
+.form-group label {
+    font-weight: 400;
+    color: #212529;
+}
+
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
