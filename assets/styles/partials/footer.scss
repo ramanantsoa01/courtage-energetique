@@ -1,0 +1,26 @@
+.footer {
+    background-color: #f8f9fa; /* Couleur de fond grise claire */
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.footer-logo img {
+    display: inline-block;
+}
+
+.footer-menu {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.footer-link {
+    color: #333;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: #555;
+}
+

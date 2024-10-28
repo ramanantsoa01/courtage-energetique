@@ -1,12 +1,14 @@
-<nav class="navbar">
+<nav class="navbar text-white">
         <div class="logo">
-            <img src="logo.png" alt="Mon Courtier Energie Logo">
+            <a href="#" style="text-decoration: none;">
+                <img src="build/images/courtage-png.png" alt="Mon Courtier Energie Logo" style="width: 100px; height: fit-content;">
+            </a>
         </div>
 
         <ul class="nav-links">
             <li><a href="#">Actualité</a></li>
             <li><a href="#">Nos Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{ path('contact')}}">Contact</a></li>
         </ul>
 
         <div class="hamburger">
