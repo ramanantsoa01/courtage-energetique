@@ -9,10 +9,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    background-color: white;
+    background-color: rgb(5, 0, 0);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
-    width: 100%;
     top: 0;
     z-index: 1000;
 }
@@ -22,14 +21,12 @@
     align-items: center;
 }
 
-.logo img {
-    height: 40px;
-}
 
 .nav-links {
     display: flex;
     gap: 2rem;
     list-style: none;
+    margin-top: 20px;
 }
 
 .nav-links li a {

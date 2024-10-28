@@ -10,9 +10,7 @@ class ContactDTO
     public string $nom;
 
     #[Assert\NotBlank]
-    #[Assert\Email(
-        message: 'L\'email {{ value }} n\'est pas valide.',
-    )]
+    #[Assert\Email()]
     public string $email;
 
     #[Assert\NotBlank]
