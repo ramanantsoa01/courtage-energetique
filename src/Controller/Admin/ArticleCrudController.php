@@ -3,13 +3,14 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
-use DateTime;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
+#[IsGranted('ROLE_ADMIN')]
 class ArticleCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -17,7 +18,6 @@ class ArticleCrudController extends AbstractCrudController
         return Article::class;
     }
 
-    
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -26,7 +26,8 @@ class ArticleCrudController extends AbstractCrudController
             TextEditorField::new('content'),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
-                ->setFormTypeOption('disabled', true)
+                ->setFormTypeOption('disabled', true),
+            TextField::new('slug')
         ];
     }
     
