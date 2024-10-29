@@ -27,13 +27,16 @@ class Article
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $slug = null;
+    private ?string $extrait = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $images = null;
 
     public function getId(): ?int
     {
@@ -52,14 +55,14 @@ class Article
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getExtrait(): ?string
     {
-        return $this->slug;
+        return $this->extrait;
     }
 
-    public function setSlug(string $slug): static
+    public function setExtrait(string $extrait): static
     {
-        $this->slug = $slug;
+        $this->extrait = $extrait;
 
         return $this;
     }
@@ -84,6 +87,18 @@ class Article
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(?string $images): static
+    {
+        $this->images = $images;
 
         return $this;
     }

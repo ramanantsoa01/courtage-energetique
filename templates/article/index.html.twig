@@ -11,9 +11,31 @@
                 <p class="mt-3 lead paragraph-responsive">Les experts en courtage partagent des analyses, des conseils et des tendances pour faire les meilleurs choix énergétiques.</p>
             </div>
         </div>
-    </header>    
+    </header>   
 
-        </div>
+    <div class="container mt-5">
+    <div class="row">
+        <h1 class="mb-4 text-center">LES DERNIERS ARTICLES</h1>
+        {% for articles in article %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 " style="border-radius: 30px;">
+                    {% if articles.images %}
+                        <img src="{{ asset('uploads/images/' ~ articles.images) }}" class="card-img-top mb-3" alt="{{ articles.name }}" style="max-width: 100%; height: auto; border-radius: 20 0;">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-center mb-3">{{ articles.name }}</h5>
+                        <p class="card-text fw-normal">{{ articles.extrait }}</p>
+                        <div class="d-flex align-items-center">
+                            <span class="ms-auto text-muted">Publiée le {{ articles.createdAt|date('d-m-Y') }}</span>
+                        </div>
+                        {# <button type="button" class="btn btn-primary" style="text-align: center;">Voir plus</button> #}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
+</div>
+
 
 {% endblock %}

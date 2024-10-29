@@ -6,6 +6,7 @@ use App\Entity\Article;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
@@ -23,11 +24,16 @@ class ArticleCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
-            TextField::new('slug'),
+            TextField::new('extrait'),
             TextEditorField::new('content'),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
                 ->setFormTypeOption('disabled', true),
+            ImageField::new('images')
+                ->setUploadDir('public/uploads/images') // Répertoire de stockage
+                ->setBasePath('/uploads/images') // URL pour l'affichage
+                ->setUploadedFileNamePattern('[randomhash].[extension]') // Nom du fichier
+                ->setRequired(false),
             
         ];
     }
