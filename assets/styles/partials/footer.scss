@@ -1,26 +1,38 @@
-.footer {
-    background-color: #f8f9fa; /* Couleur de fond grise claire */
-    border-top: 1px solid #ddd;
-    padding: 20px 0;
+footer {
+    background-color: #333; 
+    color: #fff; 
 }
 
-.footer-logo img {
-    display: inline-block;
-}
-
-.footer-menu {
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-.footer-link {
-    color: #333;
-    margin: 0 15px;
+footer a {
+    color: #aaa; 
     text-decoration: none;
-    font-weight: 500;
 }
 
-.footer-link:hover {
-    color: #555;
+footer a:hover {
+    color: #FFD700;
 }
 
+footer h5 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+footer .fa {
+    color: #FFD700;
+}
+
+footer .list-unstyled {
+    padding-left: 0;
+}
+
+.icon-facebook {
+    color: blue;
+}
+
+.icon-twitter {
+    color: rgb(13, 157, 201);
+}
+
+.icon-instagram {
+    background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCB045);
+}

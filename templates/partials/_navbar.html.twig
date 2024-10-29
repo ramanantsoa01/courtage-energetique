@@ -1,34 +1,13 @@
-<nav class="navbar text-white">
-        <div class="logo">
-            <a href="#" style="text-decoration: none;">
-                <img src="build/images/courtage-png.png" alt="Mon Courtier Energie Logo" style="width: 100px; height: fit-content;">
-            </a>
+<nav class="navbar">
+    <div class="container">
+        <a href="{{ path('home')}}" class="navbar-brand">COURTIER<span>.ÉNERGIE</span></a>
+        <div class="nav-links">
+            <a href="{{ path('actu_article')}}">ACTUALITÉ</a>
+            <a href="#">SERVICES</a>
+            <a href="{{ path('contact')}}">CONTACT</a>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="#">Actualité</a></li>
-            <li><a href="#">Nos Services</a></li>
-            <li><a href="{{ path('contact')}}">Contact</a></li>
-        </ul>
-
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
         </div>
-    </nav>
-
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
-        });
-
-        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navLinks.classList.remove("active");
-        }));
-    </script>
+    </div>
+</nav>
