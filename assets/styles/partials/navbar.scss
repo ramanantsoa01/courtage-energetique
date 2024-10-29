@@ -1,115 +1,72 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Styles généraux */
 .navbar {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem 4rem;
-    background-color: rgb(5, 0, 0);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
 }
 
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin-top: 20px;
+.navbar-brand span {
+    color: #fff200; /* Couleur accent pour "ÉNERGIE" */
 }
 
-.nav-links li a {
+.nav-links a {
+    margin: 0 15px;
+    color: #000;
     text-decoration: none;
-    color: #333;
     font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
+.nav-links a:hover {
     color: #007bff;
 }
 
-.cta-button {
-    background-color: #ff7f50;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ff6b3d;
-}
-
-.hamburger {
+.menu-toggle {
     display: none;
+    font-size: 1.5rem;
+    color: #000;
     cursor: pointer;
 }
 
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease;
-    background-color: #333;
-}
-
-@media (max-width: 1024px) {
-    .navbar {
-        padding: 1rem 2rem;
+/* Styles responsives */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Cacher les liens sur mobile */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff;
+        width: 100%;
+        max-width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+        text-align: right;
     }
 
-    .hamburger {
+    .nav-links a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
         display: block;
     }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-links {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        gap: 0;
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .nav-links li {
-        margin: 16px 0;
-    }
 }
 
+/* Affichage du menu au clic */
+.menu-toggle.active + .nav-links {
+    display: block;
+}
