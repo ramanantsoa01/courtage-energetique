@@ -1,10 +1,10 @@
 <nav class="navbar">
     <div class="container">
-        <a href="#" class="navbar-brand">COURTIER<span>.ÉNERGIE</span></a>
+        <a href="{{ path('home')}}" class="navbar-brand">COURTIER<span>.ÉNERGIE</span></a>
         <div class="nav-links">
-            <a href="#">ACTUALITÉ</a>
+            <a href="{{ path('actu_article')}}">ACTUALITÉ</a>
             <a href="#">SERVICES</a>
-            <a href="#">CONTACT</a>
+            <a href="{{ path('contact')}}">CONTACT</a>
         </div>
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>

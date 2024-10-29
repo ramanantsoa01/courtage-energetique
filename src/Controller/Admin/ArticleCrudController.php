@@ -23,11 +23,12 @@ class ArticleCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
+            TextField::new('slug'),
             TextEditorField::new('content'),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
                 ->setFormTypeOption('disabled', true),
-            TextField::new('slug')
+            
         ];
     }
     

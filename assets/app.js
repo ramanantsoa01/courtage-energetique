@@ -8,5 +8,6 @@
 // import './styles/app.css';
 import './styles/app.scss';
 import './js/index';
+import './js/blog';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
