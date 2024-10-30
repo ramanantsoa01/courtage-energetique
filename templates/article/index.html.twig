@@ -18,18 +18,18 @@
         <h1 class="mb-4 text-center">LES DERNIERS ARTICLES</h1>
         {% for articles in article %}
             <div class="col-md-4 mb-4">
-                <div class="card h-100 " style="border-radius: 30px;">
+                <div class="card h-100 " style="border-radius: 20px;">
                     {% if articles.images %}
-                        <img src="{{ asset('uploads/images/' ~ articles.images) }}" class="card-img-top mb-3" alt="{{ articles.name }}" style="max-width: 100%; height: auto; border-radius: 20 0;">
+                        <img src="{{ asset('uploads/images/' ~ articles.images) }}" class="card-img-top" alt="{{ articles.name }}" style="max-width: 100%; height: auto; border-top-left-radius: 20px;border-top-right-radius: 20px;">
                     {% endif %}
 
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-center mb-3">{{ articles.name }}</h5>
-                        <p class="card-text fw-normal">{{ articles.extrait }}</p>
                         <div class="d-flex align-items-center">
-                            <span class="ms-auto text-muted">Publiée le {{ articles.createdAt|date('d-m-Y') }}</span>
+                            <span class="text-center text-muted mt-3" style="text-align: center;">(Publiée le {{ articles.createdAt|date('d-m-Y') }})</span>
                         </div>
-                        {# <button type="button" class="btn btn-primary" style="text-align: center;">Voir plus</button> #}
+                        <p class="card-text fw-normal mb-3">{{ articles.extrait }}</p>
+                        
                     </div>
                 </div>
             </div>

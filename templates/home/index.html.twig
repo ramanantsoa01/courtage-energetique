@@ -53,9 +53,9 @@
         <div class="row">
             {% for article in articles %}
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100" style="border-radius: 15px;">
+                    <div class="card h-100" style="border-radius: 20px;">
                         {% if article.images %}
-                            <img src="{{ asset('uploads/images/' ~ article.images) }}" class="card-img-top" alt="{{ article.name }}" style="max-width: 100%; height: auto; border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                            <img src="{{ asset('uploads/images/' ~ article.images) }}" class="card-img-top" alt="{{ article.name }}" style="max-width: 100%; height: auto; border-top-left-radius: 20px;border-top-right-radius: 20px;">
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ article.name }}</h5>
@@ -68,7 +68,7 @@
                 </div>
             {% endfor %}
             <div class="text-center mb-5">
-            <a href="#" class="cta-button">TOUS LES ARTICLES </a>
+            <a href="{{ path('actu_article')}}" class="cta-button">TOUS LES ARTICLES </a>
         </div>
         </div>
         
